@@ -20,7 +20,7 @@ public:
 	int isInTree(TreeAVL *t, Record r);
 
 	//muda o remove devido a necessidade de ponteiro para sub-árvore desbalanceada
-	void removeTree(TreeAVL **t, TreeAVL **f, Record r);
+	void removeTree(TreeAVL **t, TreeAVL **f);
 	void antecessor(TreeAVL **t, TreeAVL *aux);
 	void rebalanceTree(TreeAVL **t);
 

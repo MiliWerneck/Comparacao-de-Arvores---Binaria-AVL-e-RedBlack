@@ -3,6 +3,21 @@
 Read::Read() { ResetTime(); }
 Read::~Read() {}
 
+void Read::readEntrada(vector <float> *entrada) {
+	string caminho;
+
+	caminho.assign("src/files/").append("entrada.txt");
+	ifstream myfile(caminho);
+	string line;
+
+	if (myfile.is_open()) {
+
+		while (getline(myfile, line)) {
+			entrada->push_back(stof(line));
+		}
+	}
+}
+
 void Read::readFile(string caminho, Bin *bin, AVL *avl, RB *rb,
 	vector <float> *vec, map <float, float> *mapa, unordered_map <float, float> *u_mapa) {
 
@@ -15,7 +30,8 @@ void Read::readFile(string caminho, Bin *bin, AVL *avl, RB *rb,
 
 	bin->CreateTree(&bin->raiz);
 	avl->CreateTree(&avl->raiz);
-	rb->CreateTree(&rb->raiz);
+	// rb->CreateTree(&rb->raiz);
+	rb->inicializaTreeRB(&rb->raiz);
 
 	if (myfile.is_open()) {
 
@@ -83,7 +99,6 @@ void Read::ResetTime() {
 	t1 = steady_clock::now();
 	t2 = steady_clock::now();
 
-	time_span = duration_cast<duration<double>>(t2 - t1);
 	time_bin = duration_cast<duration<double>>(t2 - t1);
 	time_avl = duration_cast<duration<double>>(t2 - t1);
 	time_rb = duration_cast<duration<double>>(t2 - t1);

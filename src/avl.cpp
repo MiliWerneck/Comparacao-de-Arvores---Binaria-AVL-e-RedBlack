@@ -2,7 +2,6 @@
 
 AVL::AVL() {
 	this->CreateTree(&this->raiz);
-
 }
 AVL::~AVL() {}
 
@@ -20,7 +19,6 @@ void AVL::insertTree(TreeAVL **t) {
 		(*t)->reg = this->reg;
 
 	} else {
-
 		if (this->reg.key < (*t)->reg.key) {
 			insertTree(&(*t)->left);
 			if ((getWeight(&(*t)->left) - getWeight(&(*t)->right)) == 2) {
@@ -30,7 +28,6 @@ void AVL::insertTree(TreeAVL **t) {
 					rotacaoDuplaDireita(t);
 			}
 		}
-
 		if (this->reg.key > (*t)->reg.key) {
 			insertTree(&(*t)->right);
 			if ((getWeight(&(*t)->right) - getWeight(&(*t)->left)) == 2) {
@@ -40,12 +37,9 @@ void AVL::insertTree(TreeAVL **t) {
 					rotacaoDuplaEsquerda(t);
 			}
 		}
-
 	}
-
 	(*t)->weight = getMaxWeight(getWeight(&(*t)->left), getWeight(&(*t)->right)) + 1;
 }
-
 
 void AVL::pesquisa(TreeAVL **t, TreeAVL **aux, Record r) {
 
@@ -53,7 +47,6 @@ void AVL::pesquisa(TreeAVL **t, TreeAVL **aux, Record r) {
 		printf("[ERROR]: Node not found!");
 		return;
 	}
-
 	if ((*t)->reg.key > r.key) { pesquisa(&(*t)->left, aux, r); return; }
 	if ((*t)->reg.key < r.key) { pesquisa(&(*t)->right, aux, r); return; }
 
@@ -65,10 +58,8 @@ int AVL::isInTree(TreeAVL *t, Record r) {
 	if (t == NULL) {
 		return 0;
 	}
-
 	return t->reg.key == r.key || isInTree(t->left, r) || isInTree(t->right, r);
 }
-
 
 void AVL::antecessor(TreeAVL **t, TreeAVL *aux) {
 
@@ -76,7 +67,6 @@ void AVL::antecessor(TreeAVL **t, TreeAVL *aux) {
 		antecessor(&(*t)->right, aux);
 		return;
 	}
-
 	aux->reg = (*t)->reg;
 	aux = *t;
 	*t = (*t)->left;
@@ -106,17 +96,19 @@ void AVL::rebalanceTree(TreeAVL **t) {
 
 }
 
-void AVL::removeTree(TreeAVL **t, TreeAVL **f, Record r) {
+void AVL::removeTree(TreeAVL **t, TreeAVL **f) {
 	TreeAVL *aux;
 
 	if (*t == NULL) {
-		printf("[ERROR]: Record not found!!!\n");
 		return;
 	}
+	if (this->reg.key < (*t)->reg.key) { removeTree(&(*t)->left, t); return; }
+	if (this->reg.key > (*t)->reg.key) { removeTree(&(*t)->right, t); return; }
 
-	if (r.key < (*t)->reg.key) { removeTree(&(*t)->left, t, r); return; }
-	if (r.key > (*t)->reg.key) { removeTree(&(*t)->right, t, r); return; }
-
+	if (*t != NULL) {
+		printf("AVL -> ");
+		printf("Record %f found!!!\n", reg.key);
+	}
 	if ((*t)->right == NULL) {
 		aux = *t;
 		*t = (*t)->left;
@@ -124,20 +116,17 @@ void AVL::removeTree(TreeAVL **t, TreeAVL **f, Record r) {
 		rebalanceTree(f);
 		return;
 	}
-
 	if ((*t)->left != NULL) {
 		antecessor(&(*t)->left, *t);
 		rebalanceTree(t);
 		rebalanceTree(f);
 		return;
 	}
-
 	aux = *t;
 	*t = (*t)->right;
 	free(aux);
 	rebalanceTree(t);
 	rebalanceTree(f);
-
 }
 
 void AVL::preordem(TreeAVL *t) {
@@ -147,7 +136,6 @@ void AVL::preordem(TreeAVL *t) {
 		preordem(t->right);
 	}
 }
-
 
 void AVL::central(TreeAVL *t) {
 	if (!(t == NULL)) {
@@ -164,7 +152,6 @@ void AVL::posordem(TreeAVL *t) {
 		printf("%.4f\t", t->reg.key);
 	}
 }
-
 
 int AVL::getWeight(TreeAVL **t) {
 	if (*t == NULL)
@@ -207,4 +194,3 @@ void AVL::rotacaoDuplaEsquerda(TreeAVL **t) {
 	rotacaoSimplesDireita(&(*t)->right);
 	rotacaoSimplesEsquerda(t);
 }
-
