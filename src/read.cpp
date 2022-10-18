@@ -30,7 +30,6 @@ void Read::readFile(string caminho, Bin *bin, AVL *avl, RB *rb,
 
 	bin->CreateTree(&bin->raiz);
 	avl->CreateTree(&avl->raiz);
-	// rb->CreateTree(&rb->raiz);
 	rb->inicializaTreeRB(&rb->raiz);
 
 	if (myfile.is_open()) {
@@ -92,7 +91,7 @@ void Read::Time(string tamanho) {
 	cout << "Tempo Árvore RedBlack: " << time_rb.count() << " seconds" << endl;
 	cout << "Tempo Vector: " << time_vec.count() << " seconds" << endl;
 	cout << "Tempo Map: " << time_mapa.count() << " seconds" << endl;
-	cout << "Tempo Unordered Map: " << time_u_mapa.count() << " seconds" << endl;
+	cout << "Tempo unordereded Map: " << time_u_mapa.count() << " seconds" << endl;
 }
 
 void Read::ResetTime() {

@@ -56,7 +56,7 @@ void Remocao::removerDados(int tamanho, Bin *bin, AVL *avl, RB *rb,
 		t1 = steady_clock::now();
 		it_umapa = u_mapa->find(dado);
 		if (it_umapa != u_mapa->end()) {
-			printf("Unordered_Map -> ");
+			printf("unordered_Map -> ");
 			printf("Record %f found!!!\n", dado);
 			u_mapa->erase(it_umapa);
 		}
@@ -81,13 +81,13 @@ void Remocao::removerDados(int tamanho, Bin *bin, AVL *avl, RB *rb,
 }
 
 void Remocao::Time(int tamanho) {
-	cout << "\nEntrada de " << tamanho << " para remocao com 10.000 valores " << endl << endl;;
+	cout << "\nEntrada de " << tamanho << " para pesquisa e remocao com 10.000 valores " << endl << endl;;
 	cout << "Tempo Árvore Binária: " << time_bin.count() << " seconds" << endl;
 	cout << "Tempo Árvore AVL: " << time_avl.count() << " seconds" << endl;
 	cout << "Tempo Árvore RedBlack: " << time_rb.count() << " seconds" << endl;
 	cout << "Tempo Vector: " << time_vec.count() << " seconds" << endl;
 	cout << "Tempo Map: " << time_mapa.count() << " seconds" << endl;
-	cout << "Tempo Unordered Map: " << time_u_mapa.count() << " seconds" << endl;
+	cout << "Tempo unordereded Map: " << time_u_mapa.count() << " seconds" << endl;
 }
 
 void Remocao::ResetTime() {
