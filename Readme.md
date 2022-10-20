@@ -83,7 +83,3 @@ https://cplusplus.com/
 | `make c` | Limpa tudo, compila e executa |
 | `make r` | Compila e executa |
 
-
-## Referências:
-
-> https://github.com/mpiress/HashTable
