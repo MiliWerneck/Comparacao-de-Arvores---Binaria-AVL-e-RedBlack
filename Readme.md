@@ -17,13 +17,12 @@ Elabore um relatório detalhando a implementação dessas estruturas, funcioname
 
 ## Resultados Obtidos
 
-<p align="justify"> As Árvores foram implementadas, baseadas nos arquivos do professor Michel
-https://github.com/mpiress
+As Árvores foram implementadas, baseadas nos arquivos do professor [Michel](https://github.com/mpiress)
 
-no livro do professor Thomas H. Cormen https://www.cs.dartmouth.edu/~thc/
+no livro do professor Thomas H. [Cormen](https://www.cs.dartmouth.edu/~thc/)
 
 E a referência de C++ foi obtida no site
-https://cplusplus.com/
+[CPlusPlus](https://cplusplus.com/)
 
 
 - <p align="justify"> O Menu de opções abaixo mostra a impressão dos tempos para criação de cada tipo de árvore, de acordo com a entrada de dados escolhida.
@@ -38,42 +37,67 @@ https://cplusplus.com/
   <img src="src/images/impressao_resposta_pesquisa.png" height = "110"></img>
 </p>
 
-<p align="justify">Os dados utilizados para pesquisa, estão em um arquivo de entrada "entrada.txt", com 10.000 valores em formato flutuante, com até 8 casas decimais, gerados através de um Gerador (figura abaixo) com 2,2% (220 dados) dos valores não presentes na base de dados que será pesquisada, base esta que também foi gerada pelo mesmo código Gerador, criando assim os arquivos: "500.txt","5000.txt", "50000.txt", "500000.txt"
+<p align="justify">Os dados utilizados para pesquisa, estão em um arquivo de entrada "entrada.txt", com 10.000 valores em formato flutuante, com até 8 casas decimais, gerados através de um Gerador (figura abaixo) com 22% (220 dados) dos valores não presentes na base de dados que será pesquisada, base esta que também foi gerada pelo mesmo código Gerador, criando assim os arquivos: "500.txt","5000.txt", "50000.txt", "500000.txt"
+
+[Gerador](https://cplusplus.com/reference/random/shuffle_order_engine/seed/)
 
 <p align="left">
   <img src="src/images/gerador.png" height = "110"></img>
 </p>
 
-- <p align="justify">A figura abaixo ilustra a saída dos tempos no terminal. Os dados foram coletados em 6 repetições de cada base de dados, esses dados foram armazenados emplanilha eletrônica onde foram tratados e gerados os gráficos correspondentes.
+- <p align="justify">A figura abaixo ilustra a saída dos tempos no terminal. Os dados foram coletados em 6 repetições de cada base de dados, esses dados foram armazenados emplanilha eletrônica onde foram tratados, normalizados (entre 0 e 1) e gerados os gráficos correspondentes.
 
 <p align="left">
   <img src="src/images/resposta_pesquisa.png" height = "160"></img>
-</p>
+
+ <p align="justify">Para poucos dados (500) não há praticamente diferença entre as formas de criação das árvores, sendo assim a binária é uma excelente opção pela facilidade e simplicidade de implementação.
 
 <p align="left">
   <img src="src/images/criacao_500.png" height = "160"></img>
 </p>
+
+<p align="justify">Para poucos dados  (5.000) há pouca diferença entre as formas de criação das árvores, com a RedBlack tendo ligeira vantagem, mas com difícil implementação, sendo assim a binária ainda  é uma excelente opção pela facilidade e simplicidade de implementação.
 <p align="left">
+
   <img src="src/images/criacao_5000.png" height = "160"></img>
 </p>
+<p align="left">
+
+<p align="justify">Para dados maiores (50.000) há diferença considerável entre as formas de criação das árvores, com a RedBlack  eunordered_map tendo vantagem, sendo assim a a red Black é uma boa opção apesar de ser mais difícil sua implementação.
+
 <p align="left">
   <img src="src/images/criacao_50000.png" height = "160"></img>
 </p>
 <p align="left">
-  <img src="src/images/criacao_500000.png" height = "160"></img>
+
+<p align="justify">Para dados grandes (500.000) há diferença considerável entre as formas de criação das árvores, descartando imediatamente o uso de  map e AVL, com a RedBlack  e unordered_map tendo vantagem, sendo assim a red Black é uma boa opção.
+
+<p align="left">
+  <img src="src/images/criacao_500000.png" height = "170"></img>
 </p>
+
+ <p align="justify">Para poucos dados (500) não há praticamente diferença entre as formas de pesquisa e remoção das árvores, sendo assim a binária é uma excelente opção pela facilidade e simplicidade de implementação.
 
 <p align="left">
   <img src="src/images/pesq_rem_500.png" height = "160"></img>
 </p>
+
+ <p align="justify">Para poucos dados (5000) há pouca diferença entre as formas de pesquisa e remoção das árvores, com exceção do vector que já pode ser descartado seu uso, sendo que a AVL tem uma ligeira vantagem, tornando assim uma excelente opção.
+
 <p align="left">
   <img src="src/images/pesq_rem_5000.png" height = "160"></img>
 </p>
+
+<p align="justify">Para dados maiores (50.000) há diferença considerável entre as formas de pesquisa e remoção nas árvores, com a RedBlack eunordered_map tendo ligeira vantagem, e o vector sendo completamente descartado pelo grande custo de tempo.
+
 <p align="left">
   <img src="src/images/pesq_rem_50000.png" height = "160"></img>
+
+  <p align="justify">Para dados grandes (500.000) há diferença considerável entre as formas de pesquisa e remoção nas árvores, com a RedBlack eunordered_map tendo ligeira vantagem, e o vector sendo completamente descartado pelo altíssimo custo de tempo.
+
 </p>
 <p align="left">
-  <img src="src/images/pesq_rem_500000.png" height = "160"></img>
+  <img src="src/images/pesq_rem_500000.png" height = "170"></img>
 </p>
 
 ## Compilação:
@@ -82,4 +106,5 @@ https://cplusplus.com/
 |---------| --------|
 | `make c` | Limpa tudo, compila e executa |
 | `make r` | Compila e executa |
+
 
