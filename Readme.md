@@ -107,7 +107,7 @@ E a referência de C++ foi obtida no site
 ## Conclusão: 
 
 <p align="justify"> O programa foi gerado em um notebook, SO Linux Ubuntu, com 8GB de RAM, processador Core I7 10th Gen, placa de vídeo NVidia, sendo que todos os processos conseguiram ser feitos sem grandes problemas.
-<p align="justify"> Portanto para pequenos volumes de dados, a Árvore binária é uma ótima opção, mas para grandes volumes de dados a melhor opção será a Árvore Red Black. O uso do vector é muito útil quando vai inserir e ler sequencialmente, mas n
+<p align="justify"> Portanto para pequenos volumes de dados, a Árvore binária é uma ótima opção, mas para grandes volumes de dados a melhor opção será a Árvore Red Black. O uso do vector é muito útil quando vai inserir e ler sequencialmente, mas não quando precisa pesquisar ou remover valores.
   
 ## Compilação:
 
