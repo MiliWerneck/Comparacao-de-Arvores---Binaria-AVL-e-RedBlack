@@ -37,7 +37,7 @@ E a referência de C++ foi obtida no site
   <img src="src/images/impressao_resposta_pesquisa.png" height = "110"></img>
 </p>
 
-<p align="justify">Os dados utilizados para pesquisa, estão em um arquivo de entrada "entrada.txt", com 10.000 valores em formato flutuante, com até 8 casas decimais, gerados através de um Gerador (figura abaixo) com 22% (220 dados) dos valores não presentes na base de dados que será pesquisada, base esta que também foi gerada pelo mesmo código Gerador, criando assim os arquivos: "500.txt","5000.txt", "50000.txt", "500000.txt"
+<p align="justify">Os dados utilizados para pesquisa, estão em um arquivo de entrada "entrada.txt", com 10.000 valores em formato flutuante, com até 8 casas decimais, gerados através de um Gerador (figura abaixo) com 2,2% (220 dados) dos valores não presentes na base de dados que será pesquisada, base esta que também foi gerada pelo mesmo código Gerador, criando assim os arquivos: "500.txt","5000.txt", "50000.txt", "500000.txt"
 
 [Gerador](https://cplusplus.com/reference/random/shuffle_order_engine/seed/)
 
@@ -49,6 +49,8 @@ E a referência de C++ foi obtida no site
 
 <p align="left">
   <img src="src/images/resposta_pesquisa.png" height = "160"></img>
+
+## Resultados criação de Árvores
 
  <p align="justify">Para poucos dados (500) não há praticamente diferença entre as formas de criação das árvores, sendo assim a binária é uma excelente opção pela facilidade e simplicidade de implementação.
 
@@ -75,6 +77,8 @@ E a referência de C++ foi obtida no site
 <p align="left">
   <img src="src/images/criacao_500000.png" height = "170"></img>
 </p>
+
+## Resultados Pesquisa e Remoç de Árvores
 
  <p align="justify">Para poucos dados (500) não há praticamente diferença entre as formas de pesquisa e remoção das árvores, sendo assim a binária é uma excelente opção pela facilidade e simplicidade de implementação.
 
