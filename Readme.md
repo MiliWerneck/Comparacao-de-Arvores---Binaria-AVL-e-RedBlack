@@ -94,7 +94,9 @@ E a referência de C++ foi obtida no site
   <img src="src/images/pesq_rem_50000.png" height = "160"></img>
 
   <p align="justify">Para dados grandes (500.000) há diferença considerável entre as formas de pesquisa e remoção nas árvores, com a RedBlack eunordered_map tendo ligeira vantagem, e o vector sendo completamente descartado pelo altíssimo custo de tempo.
-
+  
+  <p align="justify"> O programa foi gerado em um notebook, SO Linux Ubuntu, com 8GB de RAM, processador Core I7 10th Gen, placa de vídeo NVidia, sendo que todos os processos conseguiram ser feitos sem grandes problemas.
+  
 </p>
 <p align="left">
   <img src="src/images/pesq_rem_500000.png" height = "170"></img>
