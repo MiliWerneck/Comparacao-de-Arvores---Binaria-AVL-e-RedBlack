@@ -78,7 +78,7 @@ E a referência de C++ foi obtida no site
   <img src="src/images/criacao_500000.png" height = "170"></img>
 </p>
 
-## Resultados Pesquisa e Remoç de Árvores
+## Resultados Pesquisa e Remoção de Árvores
 
  <p align="justify">Para poucos dados (500) não há praticamente diferença entre as formas de pesquisa e remoção das árvores, sendo assim a binária é uma excelente opção pela facilidade e simplicidade de implementação.
 
@@ -103,6 +103,8 @@ E a referência de C++ foi obtida no site
 <p align="left">
   <img src="src/images/pesq_rem_500000.png" height = "170"></img>
 </p>
+
+## Conclusão: 
 
 <p align="justify"> O programa foi gerado em um notebook, SO Linux Ubuntu, com 8GB de RAM, processador Core I7 10th Gen, placa de vídeo NVidia, sendo que todos os processos conseguiram ser feitos sem grandes problemas.
 <p align="justify"> Portanto para pequenos volumes de dados, a Árvore binária é uma ótima opção, mas para grandes volumes de dados a melhor opção será a Árvore Red Black.
